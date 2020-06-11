@@ -12,7 +12,7 @@ RUN mkdir /weedock
 ENV APP_ROOT /weedock
 WORKDIR $APP_ROOT
 
-# ホスト側（ローカル）のGemfileを追加する（ローカルのGemfileは【３】で作成）
+# ホスト側（ローカル）のGemfileを追加する
 COPY ./Gemfile $APP_ROOT/Gemfile
 COPY ./Gemfile.lock $APP_ROOT/Gemfile.lock
 
