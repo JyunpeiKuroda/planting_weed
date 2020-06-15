@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(content: post_params[:text])
     if @post.save
       redirect_to :action => "index", success: "投稿しました"
     else
@@ -13,11 +13,9 @@ class PostsController < ApplicationController
       render :action => "new"
     end
   end
-  binding.pry
 
 
   def index
-    binding.pry
     @post = Post.all
   end
   def show
@@ -36,8 +34,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:text)
   end
-
-
 end

@@ -12,15 +12,16 @@ services:
 
   web:
     build: .
-    command: rails s -p 3000 -b '0.0.0.0'
+    # Railsサーバのコンテナを落とすと、pidファイルが残るから次回起動時に削除。
+    command: bash -c "rm -f tmp/pids/server.pid && rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/weedock
     ports:
       - "3000:3000"
     links:
       - db
-    tty: true
-    stdin_open: true
+    stdin_open: true    # 標準入力への接続
+    tty: true           # 標準出力の接続
 
 volumes:
   db-volume:
