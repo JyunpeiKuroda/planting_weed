@@ -7,8 +7,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(content: post_params[:text])
     if @post.save
+      # 確認用success(いらなくなれば消す)
       redirect_to :action => "index", success: "投稿しました"
     else
+      # 確認用flash(いらなくなれば消す)
       flash.now[:danger] = "投稿に失敗しました"
       render :action => "new"
     end
@@ -16,11 +18,12 @@ class PostsController < ApplicationController
 
 
   def index
-    @post = Post.all
+    @posts = Post.all
   end
   def show
-    # @post = Tweet.find(params[:id])
+    @post = Post.find(params[:id])
   end
+
 
 
   def edit
@@ -34,6 +37,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:text)
+    params.permit(:text, :id)
   end
 end

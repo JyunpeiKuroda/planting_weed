@@ -34,66 +34,99 @@
   text-align: left;
 }
 
+/* posts/index_card ================================ */
+.posts-index-item{
+  margin-top: 25px;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-link {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding: 20px;
+}
+.card-link a {
+  text-decoration: none;
+  color: #0bd;
+  margin: 0 10px;
+}
+.card-link a:hover {
+  color: #0090aa;
+}
+
 /* posts/show ================================ */
-.posts-show form {
-  display: inline;
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.posts-show-item {
-  padding: 30px;
-  background-color: white;
-  box-shadow: 0 2px 6px #c1ced7;
-  overflow: hidden;
+.body_card {
+  flex: 1;
+  background-color: #eee;
+  text-align: center;
+  margin-top: 65px;
 }
 
-.posts-show-item img {
-  width: 60px;
-  height: 60px;
-  border-radius: 40%;
-  box-shadow: 0 2px 6px #c1ced7;
-  vertical-align: middle;
-  object-fit: cover;
+.card {
+  width: 350px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 20px;
+  max-width: 550px;
 }
-
-.posts-show-item .post-user-name a {
-  vertical-align: middle;
-  font-size: 24px;
-  margin-left: 15px;
+.card-img {
+  border-radius: 5px 5px 0 0;
+  max-width: 100%;
+  height: auto;
 }
-
-.posts-show-item p {
-  font-size: 24px;
-  margin: 20px 0;
+.card-content {
+  padding: 20px;
 }
-
-.post-time {
-  color: #8899a6;
-  margin-bottom: 10px;
+.card-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
 }
-
-.post-menus {
-  float: right;
-}
-
-.post-menus a, .post-menus input {
-  color: #8899a6;
-  text-decoration: underline;
+.card-text {
+  color: #777;
   font-size: 14px;
+  line-height: 1.5;
+}
+.card-link {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding: 20px;
+}
+.card-link a {
+  text-decoration: none;
+  color: #0bd;
+  margin: 0 10px;
+}
+.card-link a:hover {
+  color: #0090aa;
 }
 
 /* posts/new ================================ */
-// .posts-new textarea {
-//   font-size: 20px;
-//   padding: 10px;
-//   min-height: 140px;
-//   border: 1px solid rgb(216, 218, 223);
-//   resize: none;
-// }
+.posts-new textarea {
+  font-size: 20px;
+  padding: 10px;
+  min-height: 140px;
+  border: 1px solid rgb(216, 218, 223);
+  resize: none;
+}
 
-// .posts-new textarea::-webkit-input-placeholder {
-//   font-size: 24px;
-//   opacity: 0.5;
-// }
+.posts-new textarea::-webkit-input-placeholder {
+  font-size: 24px;
+  opacity: 0.5;
+}
 
 .post_contents {
   position: absolute;
