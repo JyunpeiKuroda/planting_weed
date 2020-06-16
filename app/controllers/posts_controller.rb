@@ -27,13 +27,24 @@ class PostsController < ApplicationController
 
 
   def edit
+    @post = Post.find(params[:id])
   end
   def update
   end
 
 
   def destroy
+    if Post.find(params[:id]).destroy
+      # 確認用flash(いらなくなれば消す)
+      flash[:success] = "User deleted"
+      redirect_to :action => "index", success: "削除しました"
+    else
+      # 確認用flash(いらなくなれば消す)
+      flash.index[:danger] = "削除に失敗しました"
+      render :action => "index"
+    end
   end
+
 
   private
   def post_params
