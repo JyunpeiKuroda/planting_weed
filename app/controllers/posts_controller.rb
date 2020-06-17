@@ -25,11 +25,20 @@ class PostsController < ApplicationController
   end
 
 
-
   def edit
     @post = Post.find(params[:id])
   end
   def update
+    @post = Post.find(params[:id])
+    if @post.update(content: params[:content])
+      # 確認用flash(いらなくなれば消す)
+      flash[:success] = "Post update"
+      redirect_to :action => "index", success: "編集しました"
+    else
+      # 確認用flash(いらなくなれば消す)
+      flash.index[:danger] = "編集に失敗しました"
+      render :action => "edit"
+    end
   end
 
 
