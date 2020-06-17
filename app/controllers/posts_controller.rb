@@ -14,7 +14,6 @@ class PostsController < ApplicationController
       flash.now[:danger] = "投稿に失敗しました"
       render :action => "new"
     end
-    binding.pry
   end
 
 
@@ -44,7 +43,8 @@ class PostsController < ApplicationController
 
 
   def destroy
-    if Post.find(params[:id]).destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
       # 確認用flash(いらなくなれば消す)
       flash[:success] = "User deleted"
       redirect_to :action => "index", success: "削除しました"
