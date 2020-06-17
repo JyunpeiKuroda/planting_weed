@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(content: post_params[:text])
+    @post = Post.create(content: post_params[:text])
     if @post.save
       # 確認用success(いらなくなれば消す)
       redirect_to :action => "index", success: "投稿しました"
@@ -14,6 +14,7 @@ class PostsController < ApplicationController
       flash.now[:danger] = "投稿に失敗しました"
       render :action => "new"
     end
+    binding.pry
   end
 
 
@@ -57,6 +58,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.permit(:text, :id)
+    params.require(:post).permit(:text, :id)
   end
 end
