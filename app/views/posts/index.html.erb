@@ -1,31 +1,18 @@
-<header>
-  <div class="header-logo">
-    <a href="/">WeedApp</a>
-  </div>
-  <ul class="header-menus">
-    <li>
-      <a href="/posts/new">投稿</a>
-    </li>
-  </ul>
-</header>
-
-<body>
-  <div class="main posts-index">
-    <div class="card-content">
-      <div class="container">
-        <% @posts.each do |post| %>
-          <div class="posts-index-item">
-            <div class="posts-index-content">
-              <p><%= post.content %></p>
-            </div>
-            <div class="card-link">
-              <div class="more_list">
-                <a href><%= link_to '詳細', post_path(post.id) %></a>
-              </div>
+<div class="main posts-index">
+  <div class="card-content">
+    <div class="container">
+      <% @posts.each do |post| %>
+        <div class="posts-index-item">
+          <div class="posts-index-content">
+            <p><%= post.content %></p>
+          </div>
+          <div class="card-link">
+            <div class="more_list">
+              <a href><%= link_to '詳細', post_path(post.id) %></a>
             </div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
-</body>
+</div>

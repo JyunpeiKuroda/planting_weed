@@ -1,29 +1,16 @@
-<header>
-  <div class="header-logo">
-    <a href="/">WeedApp</a>
-  </div>
-  <ul class="header-menus">
-    <li>
-      <a href="/about">WeedAppとは</a>
-    </li>
-  </ul>
-</header>
-
-<body>
-  <div class = "body_card">
-    <div class="card">
-      <img class="card-img" src="" alt="">
-      <div class="card-content">
-        <p class="card-text">
-          <%= @post.content %>
-        </p>
-      </div>
-      <div class="card-link">
-        <div class="more_list">
-          <a href><%= link_to '編集', "/posts/#{@post.id}/edit", method: :get %></a>
-          <a href><%= link_to '削除', "/posts/#{@post.id}", method: :delete %></a>
-        </div>
+<div class = "body_card">
+  <div class="card">
+    <img class="card-img" src="" alt="">
+    <div class="card-content">
+      <p class="card-text">
+        <%= @post.content %>
+      </p>
+    </div>
+    <div class="card-link">
+      <div class="more_list">
+        <a href><%= link_to '編集', "/posts/#{@post.id}/edit", method: :get %></a>
+        <a href><%= link_to '削除', "/posts/#{@post.id}", method: :delete %></a>
       </div>
     </div>
   </div>
-</body>
+</div>
