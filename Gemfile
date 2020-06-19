@@ -42,7 +42,7 @@ gem 'devise-i18n'
 # Bootstrap
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
-gem 'devise-bootstrap-views', '~> 1.0'
+# gem 'devise-bootstrap-views', '~> 1.0'
 # ---------------------------------------------
 
 group :development, :test do
