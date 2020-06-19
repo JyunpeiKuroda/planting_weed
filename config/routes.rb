@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root 'posts#index'
   get '/home' => 'home#top'
   # get "about" => "home#about"
-  resources :posts
+  resources :posts do
+    resources :users, only: [:show]
+  end
 end
