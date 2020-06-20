@@ -5,7 +5,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(content: post_params[:text])
+    @post = Post.create(content: post_params[:text],
+                        image: post_params[:image]
+    )
     if @post.save
       # 確認用success(いらなくなれば消す)
       redirect_to :action => "index", success: "投稿しました"
@@ -58,6 +60,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:text, :id)
+    params.require(:post).permit(:id, :text, :image)
   end
 end
