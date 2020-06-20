@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     @post = Post.create(content: post_params[:text],
                         image: post_params[:image]
     )
+    binding.pry
     if @post.save
       # 確認用success(いらなくなれば消す)
       redirect_to :action => "index", success: "投稿しました"

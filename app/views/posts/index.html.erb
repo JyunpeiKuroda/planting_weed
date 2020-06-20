@@ -3,6 +3,8 @@
     <div class="container">
       <% @posts.each do |post| %>
         <div class="posts-index-item">
+          <img class="posts-index-image">
+            <%= image_tag post.image.to_s, alt: nil, id: "image", class: "image" %><br>
           <div class="posts-index-content">
             <p><%= post.content %></p>
           </div>
