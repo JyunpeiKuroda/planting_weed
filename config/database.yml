@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: weedock_production
-  username: weedock
-  password: <%= ENV['WEEDOCK_DATABASE_PASSWORD'] %>
+  # username: weedock
+  # password: <%= ENV['WEEDOCK_DATABASE_PASSWORD'] %>

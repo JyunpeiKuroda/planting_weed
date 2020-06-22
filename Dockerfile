@@ -1,3 +1,4 @@
+# 本番環境用
 FROM ruby:2.5.3
 
 # 必要なパッケージのインストール
@@ -23,7 +24,9 @@ COPY ./Gemfile.lock $APP_ROOT/Gemfile.lock
 RUN bundle install
 COPY . $APP_ROOT
 
+# productionでのイメージように追加
 ENV RAILS_ENV production
+# AWSで言うcloud Watchみたいな。
 ENV RAILS_SERVE_STATIC_FILES true
 ENV RAILS_LOG_TO_STDOUT true
 RUN rails assets:precompile
