@@ -28,6 +28,16 @@ test:
   <<: *default
   database: weedock_test
 
+production:
+  database: weedock_production
+  #-----------------------------------
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV["MYSQL_USERNAME"] %>
+  password: <%= ENV["MYSQL_PASSWORD"] %>
+  socket: "/cloudsql/<%= ENV["INSTANCE_CONNECTION_NAME"] %>"
+
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -47,8 +57,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: weedock_production
-  # username: weedock
-  # password: <%= ENV['WEEDOCK_DATABASE_PASSWORD'] %>
