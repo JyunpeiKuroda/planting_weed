@@ -7,18 +7,18 @@
       </h3>
 
       <div class="field">
-        <% if @post.image? %>
+        <% if @post.file? %>
           <div class="thumbnail">
-            <%= image_tag @post.image.url %>
+            <%= image_tag @post.file.url %>
           </div>
         <% end %><br>
         <%= f.label :image %><br>
-        <%= f.file_field :image %>
+        <%= f.file_field :file %>
         <%= f.hidden_field :image_cache %>
       </div>
       <div class="field">
         <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
-        <% if @post.persisted? && @post.image? %>
+        <% if @post.persisted? && @post.file? %>
           <label>
             <%= f.check_box :remove_image %>
               画像を削除

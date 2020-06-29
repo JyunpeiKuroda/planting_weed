@@ -1,7 +1,7 @@
 <div class = "body_card">
   <div class="card">
     <img class="card-img" >
-      <%= image_tag(@post.image_url) if @post.image.present? %>
+      <%= image_tag(@post.file_url) if @post.file.present? %>
     <div class="card-content">
       <p class="card-text">
         <%= @post.content %>

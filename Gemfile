@@ -46,6 +46,10 @@ gem 'jquery-rails'
 # ---------------------------------------------
 # 画像uplord機能----------------------------------
 gem 'carrierwave'
+# carriewaveと組み合わせるとアップロード先を AWS S3やGCP cloud storageなどに変更可能
+gem 'fog-google'
+gem "mime-types"
+gem "google-api-client", "> 0.8.5", "< 0.9"
 # ---------------------------------------------
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -5,8 +5,9 @@ class PostsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @post = Post.create(content: post_params[:text],
-                        image: post_params[:image]
+                        file: post_params[:file]
     )
     if @post.save
       # 確認用success(いらなくなれば消す)
@@ -60,6 +61,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:id, :text, :image)
+    params.require(:post).permit(:id, :text, :file)
   end
 end

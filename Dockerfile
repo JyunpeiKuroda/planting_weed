@@ -22,12 +22,15 @@ COPY ./Gemfile.lock $APP_ROOT/Gemfile.lock
 
 # Gemfileのbundle install
 RUN bundle install
+# ソースコード追加
 COPY . $APP_ROOT
 
 # productionでのイメージように追加
 ENV RAILS_ENV production
-# AWSで言うcloud Watchみたいな。
+# 静的ファイル配信をpumaに設定
 ENV RAILS_SERVE_STATIC_FILES true
+# ログを標準出力に設定
 ENV RAILS_LOG_TO_STDOUT true
 RUN rails assets:precompile
+
 CMD bash -c "rails db:create && rails db:migrate && rails s -b '0.0.0.0'"
