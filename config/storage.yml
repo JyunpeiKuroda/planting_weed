@@ -15,6 +15,7 @@ local:
 #   bucket: your_own_bucket
 
 # Remember not to checkin your GCS keyfile to a repository
+#今回のactive_storageの処理でGCSにuplodeする時の記述。
 # google:
 #   service: GCS
 #   project: your_project
