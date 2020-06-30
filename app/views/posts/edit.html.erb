@@ -1,37 +1,22 @@
 <div class="container-fluid">
   <div class = "content">
     <%= form_with(model: @post) do |f| %>
-
       <h3>
         編集する
       </h3>
-
       <div class="field">
-        <% if @post.file? %>
+        <% if @post.photo.attached? %>
           <div class="thumbnail">
-            <%= image_tag @post.file.url %>
+            <%= image_tag @post.photo %>
           </div>
         <% end %><br>
-        <%= f.label :image %><br>
         <%= f.file_field :file %>
         <%= f.hidden_field :image_cache %>
       </div>
       <div class="field">
-        <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
-        <% if @post.persisted? && @post.file? %>
-          <label>
-            <%= f.check_box :remove_image %>
-              画像を削除
-          </label>
-        <% end %>
       </div>
-
       <textarea cols="30" name="content" placeholder="変更したい投稿内容を入力" rows="10"><%= @post.content %></textarea>
-      <input type="submit" value="変更する">
-      <button type="button" class="btn btn-success">
-        変更する
-      </button>
-      <button type="button" class="btn btn-outline-success">Success</button>
+      <%= f.submit '変更', id: 'submit-btn' %>
     <% end %>
   </div>
 </div>

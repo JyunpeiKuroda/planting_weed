@@ -33,7 +33,8 @@ class PostsController < ApplicationController
   end
   def update
     @post = Post.find(params[:id])
-    if @post.update(content: params[:content])
+    if @post.update(content: params[:content],
+                    photo: post_params[:photo])
       # 確認用flash(いらなくなれば消す)
       flash[:success] = "Post update"
       redirect_to :action => "index", success: "編集しました"
