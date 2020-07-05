@@ -7,8 +7,7 @@ class PostsController < ApplicationController
   def create
     # binding.pry
     @post = Post.create(content: post_params[:text],
-                        photo: post_params[:photo]
-    )
+                        photo: post_params[:photo])
     if @post.save
       # 確認用success(いらなくなれば消す)
       redirect_to :action => "index", success: "投稿しました"
@@ -33,7 +32,7 @@ class PostsController < ApplicationController
   end
   def update
     @post = Post.find(params[:id])
-    if @post.update(content: params[:content],
+    if @post.update(content: params[:text],
                     photo: post_params[:photo])
       # 確認用flash(いらなくなれば消す)
       flash[:success] = "Post update"

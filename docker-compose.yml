@@ -13,11 +13,22 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     # Railsサーバのコンテナを落とすと、pidファイルが残るから次回起動時に削除。+PUMAの起動(本番構成の時は下記の、ommand: volumes: - の3つをコメントアウト)
-    command: bash -c "bundle && bundle exec rails db:migrate && rm -f tmp/pids/server.pid && rails s -p 3000 -b '0.0.0.0'"
-    volumes:
-      - .:/weedock
+    # command: sh -c "bundle && bundle exec rails db:migrate && rm -f tmp/pids/server.pid && rails s -p 3000 -b '0.0.0.0'"
+    # volumes:
+    #   - .:/weedock
+
+    # GCSの記述ーーーーーーーー
+    # env_file:
+    #   - .gcs.json
+    # env_file:
+    #   - ./weedock/gcs.json
+    # environment:
+    #   GOOGLE_APPLICATION_CREDENTIALS: /weedock/gcs.json
+    # volumes:
+    #   - ${GOOGLE_APPLICATION_CREDENTIALS}: "/weedock/gcs.json"
+
     ports:
       - "3000:3000"
     links:

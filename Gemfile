@@ -44,13 +44,18 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 # gem 'devise-bootstrap-views', '~> 1.0'
 # ---------------------------------------------
+
 # 画像uplord機能----------------------------------
-gem 'carrierwave'
+gem "google-cloud-storage", "~> 1.8"
+#  ,require: false
+# gem "dotenv-rails"
+# gem 'carrierwave'
 # carriewaveと組み合わせるとアップロード先を AWS S3やGCP cloud storageなどに変更可能
-gem 'fog-google'
-gem "mime-types"
-gem "google-api-client", "> 0.8.5", "< 0.9"
+# gem 'fog-google'
+# gem "mime-types"
+# gem "google-api-client", "> 0.8.5", "< 0.9"
 # ---------------------------------------------
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'

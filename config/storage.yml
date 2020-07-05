@@ -15,12 +15,18 @@ local:
 #   bucket: your_own_bucket
 
 # Remember not to checkin your GCS keyfile to a repository
-#今回のactive_storageの処理でGCSにuplodeする時の記述。
-# google:
+# google.dev:
 #   service: GCS
-#   project: your_project
-#   credentials: <%= Rails.root.join("path/to/gcs.keyfile") %>
-#   bucket: your_own_bucket
+#   project: weedock-project
+#   credentials: <%= Rails.root.join("gcs.json") %>
+#   bucket: asia.artifacts.weedock-project.appspot.com
+
+#今回のactive_storageの処理でGCSにuplodeする時の記述。
+google:
+  service: GCS
+  credentials: <%= Rails.root.join("gcs.json") %>
+  project: "my-project-weedock"
+  bucket: "weedock-service-bucket"
 
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
