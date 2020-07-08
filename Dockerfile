@@ -10,6 +10,7 @@ WORKDIR ${ROOT}
 RUN apk add --no-cache --update build-base \
                                 linux-headers \
                                 git \
+                                imagemagick\
                                 mysql-client \
                                 mysql-dev \
                                 nodejs \

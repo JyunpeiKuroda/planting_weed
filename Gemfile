@@ -26,8 +26,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-# Use ActiveStorage variant
-gem 'mini_magick', '~> 4.8'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # Reduces boot times through caching; required in config/boot.rb
@@ -46,13 +44,13 @@ gem 'jquery-rails'
 # ---------------------------------------------
 
 # 画像uplord機能----------------------------------
-gem "google-cloud-storage", "~> 1.8"
-#  ,require: false
+gem "google-cloud-storage", "~> 1.8",require: false
+# バリアントを有効にする
+gem 'image_processing', '~> 1.2'
+# Use ActiveStorage variant
+gem 'mini_magick', '~> 4.8'
+# .envの環境変数。
 # gem "dotenv-rails"
-# gem 'carrierwave'
-# carriewaveと組み合わせるとアップロード先を AWS S3やGCP cloud storageなどに変更可能
-# gem 'fog-google'
-# gem "mime-types"
 # gem "google-api-client", "> 0.8.5", "< 0.9"
 # ---------------------------------------------
 

@@ -2,7 +2,7 @@
   <div class="card">
     <img class="card-img" >
       <% if @post.photo.attached? %>
-        <%= image_tag @post.photo %>
+        <%= image_tag url_for(@post.photo.variant(resize: '400x400')) %>
       <% end %>
     <div class="card-content">
       <p class="card-text">

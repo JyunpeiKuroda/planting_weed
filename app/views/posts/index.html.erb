@@ -5,8 +5,10 @@
         <div class="posts-index-item">
           <img class="posts-index-image">
             <% if post.photo.attached? %>
-              <%= image_tag post.photo %>
-            <% end %>
+              <div class="thumbnail">
+                <%= image_tag url_for(post.photo.variant(resize: '440x500')) %>
+              </div>
+            <% end %><br>
             <br>
           <div class="posts-index-content">
             <p><%= post.content %></p>

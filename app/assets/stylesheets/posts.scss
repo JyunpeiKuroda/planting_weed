@@ -1,6 +1,6 @@
 /* posts/index ================================ */
 .posts-index-item {
-  padding: 20px 30px;
+  padding: 20px 20px;
   background-color: white;
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
@@ -37,7 +37,7 @@
 
 /* posts/index_card ================================ */
 .posts-index-item{
-  margin-top: 25px;
+  margin-top: 16px;
 }
 
 .card-content {
@@ -57,6 +57,14 @@
 .card-link a:hover {
   color: #0090aa;
 }
+
+.thumbnail {
+  text-align:center
+}
+
+// img {
+//   margin: 0auto;
+// }
 
 /* posts/show ================================ */
 body {
