@@ -32,8 +32,8 @@ class PostsController < ApplicationController
   end
   def update
     @post = Post.find(params[:id])
-    if @post.update(content: params[:text],
-                    photo: post_params[:photo])
+    if @post.update.params.require(:post).permit(:content, :photo)
+
       # 確認用flash(いらなくなれば消す)
       flash[:success] = "Post update"
       redirect_to :action => "index", success: "編集しました"
@@ -42,6 +42,7 @@ class PostsController < ApplicationController
       flash.index[:danger] = "編集に失敗しました"
       render :action => "edit"
     end
+
   end
 
 

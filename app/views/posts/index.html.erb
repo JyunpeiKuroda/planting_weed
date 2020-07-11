@@ -6,7 +6,7 @@
           <img class="posts-index-image">
             <% if post.photo.attached? %>
               <div class="thumbnail">
-                <%= image_tag url_for(post.photo.variant(resize: '440x500')) %>
+                <%= image_tag url_for(post.photo.variant(resize: '400x400')) %>
               </div>
             <% end %><br>
             <br>

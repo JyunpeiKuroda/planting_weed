@@ -16,7 +16,6 @@ RUN apk add --no-cache --update build-base \
                                 nodejs \
                                 tzdata\
                                 openssh \
-                                build-base \
                                 libxml2-dev \
                                 libxslt-dev \
                                 yarn \

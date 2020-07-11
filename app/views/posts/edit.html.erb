@@ -9,11 +9,11 @@
           <div class="thumbnail">
             <%= image_tag url_for(@post.photo)%>
           </div>
-        <% end %><br>
+        <% end %>
+        <br>
+        <br>
         <%= f.file_field :file %>
         <%= f.hidden_field :image_cache %>
-      </div>
-      <div class="field">
       </div>
       <textarea cols="30" name="content" placeholder="変更したい投稿内容を入力" rows="10"><%= @post.content %></textarea>
       <%= f.submit '変更', id: 'submit-btn' %>

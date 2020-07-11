@@ -3,6 +3,9 @@ RUN mkdir /weedock
 ENV ROOT="/weedock"
 WORKDIR ${ROOT}
 # 必要なパッケージのインストール
+# ARG VIPS_VERSION=8.9.1
+# ARG VIPS_URL=https://github.com/libvips/libvips/releases/download
+
 RUN apk add --no-cache --update build-base \
                                 linux-headers \
                                 git \
@@ -12,11 +15,11 @@ RUN apk add --no-cache --update build-base \
                                 nodejs \
                                 tzdata\
                                 openssh \
-                                build-base \
                                 libxml2-dev \
                                 libxslt-dev \
                                 yarn \
                                 curl-dev
+
 COPY Gemfile ${ROOT}
 COPY Gemfile.lock ${ROOT}
 RUN bundle install

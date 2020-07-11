@@ -49,6 +49,8 @@ gem "google-cloud-storage", "~> 1.8",require: false
 gem 'image_processing', '~> 1.2'
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
+# Use ActiveStorage variant(libvips)
+# gem 'ruby-vips'
 # .envの環境変数。
 # gem "dotenv-rails"
 # gem "google-api-client", "> 0.8.5", "< 0.9"
