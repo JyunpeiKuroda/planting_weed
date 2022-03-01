@@ -96,7 +96,7 @@ GEM
     execjs (2.7.0)
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
-    ffi (1.13.1)
+    ffi (1.15.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     google-api-client (0.41.1)
@@ -130,7 +130,7 @@ GEM
     httpclient (2.8.3)
     i18n (1.8.3)
       concurrent-ruby (~> 1.0)
-    image_processing (1.11.0)
+    image_processing (1.12.2)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
     io-like (0.3.1)
@@ -154,7 +154,9 @@ GEM
       mimemagic (~> 0.3.2)
     memoist (0.16.2)
     method_source (0.9.2)
-    mimemagic (0.3.5)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
@@ -223,8 +225,8 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     retriable (3.1.2)
-    ruby-vips (2.0.17)
-      ffi (~> 1.9)
+    ruby-vips (2.1.4)
+      ffi (~> 1.12)
     ruby_dep (1.5.0)
     rubyzip (2.3.0)
     sass (3.7.4)
@@ -302,7 +304,7 @@ DEPENDENCIES
   devise
   devise-i18n
   google-cloud-storage (~> 1.8)
-  image_processing (~> 1.2)
+  image_processing (~> 1.12)
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)

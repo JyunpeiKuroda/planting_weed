@@ -46,7 +46,7 @@ gem 'jquery-rails'
 # 画像uplord機能----------------------------------
 gem "google-cloud-storage", "~> 1.8",require: false
 # バリアントを有効にする
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
 # Use ActiveStorage variant(libvips)
